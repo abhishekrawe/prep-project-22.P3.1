@@ -1,6 +1,7 @@
 import './weatherCard.css';
 import { WiBarometer, WiWindy, WiHumidity } from 'react-icons/wi';
 import backgrounds from './backgroundArray';
+import SoundArray from '../backgroundSoundArray/SoundArray'
 
 function WeatherCard(props) {
   const { results } = props;
@@ -9,6 +10,7 @@ function WeatherCard(props) {
 
   return (
     <div className="weather-card">
+      <SoundArray/>
       <div className="content">
         <div className="place">
           {results.name}, {results.sys.country}
