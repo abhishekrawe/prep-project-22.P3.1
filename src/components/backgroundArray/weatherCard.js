@@ -1,16 +1,25 @@
+import react, {useEffect} from 'react'
 import './weatherCard.css';
 import { WiBarometer, WiWindy, WiHumidity } from 'react-icons/wi';
 import backgrounds from './backgroundArray';
-import SoundArray from '../backgroundSoundArray/SoundArray'
+// import SoundArray from '../backgroundSoundArray/SoundArray'
+import morningBird from '../backgroundSoundArray/assets/raindrop.mp3'
 
+
+const playIt = () => {
+  const aud = new Audio(morningBird)
+  aud.play()
+}
 function WeatherCard(props) {
   const { results } = props;
   const { cardBackground } = props;
   console.log(cardBackground);
 
+
   return (
     <div className="weather-card">
-      <SoundArray/>
+      {/* <SoundArray sound={morningBird}/> */}
+      <button type="button" onClick={playIt()}>Play Audio </button>
       <div className="content">
         <div className="place">
           {results.name}, {results.sys.country}
